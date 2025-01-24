@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/bash
 
 
 ls ~/
@@ -48,7 +48,7 @@ string1=$(echo $the_string | grep -oP '.*(?=system version)')
 # Template string 
 string2="Put-your-group-name-here's"
 
-# Test fails if not changes detected 
+# Test fails if no changes are detected 
 if [ "$string1" = "$string2" ]; then
   echo "Group-name string wasn't changed"
   exit 1
@@ -56,15 +56,6 @@ else
   echo "Group-name string changed"
 fi
  
-
-
-if ["$var" == "$string2"]; then
-  echo "No changes detected in group name string"
-  exit 1  # Exit with a non-zero status code to indicate failure
-else
-  echo "Group-name string was changed"
-fi
-
 
 
 
