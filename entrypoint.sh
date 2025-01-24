@@ -43,9 +43,20 @@ cat output.txt
 
 the_string=$(grep "DUMBVM" "output.txt")
 echo $the_string | grep -oP '.*(?=system version)'
-var=$(echo $the_string | grep -oP '.*(?=system version)')
+string1=$(echo $the_string | grep -oP '.*(?=system version)')
 
-string2="Put-your-group-name-here"
+# Template string 
+string2="Put-your-group-name-here's"
+
+# Test fails if not changes detected 
+if [ "$string1" = "$string2" ]; then
+  echo "Group-name string wasn't changed"
+  exit 1
+else
+  echo "Group-name string changed"
+fi
+ 
+
 
 if ["$var" == "$string2"]; then
   echo "No changes detected in group name string"
