@@ -17,10 +17,16 @@ cd kern/conf
 echo "Building OS/161 (Kernel-level)"
 cd ../compile/DUMBVM
 /root/os161/tools/bin/bmake depend
-cd /github/workspace
 /root/os161/tools/bin/bmake
-cd /github/workspace
+
+echo "List of files in the directory"
+ls -l 
+
 # /root/os161/tools/bin/bmake install
+
+
+
+
 
 # # Build OS/161 (Userland)
 # cd /github/workspace
