@@ -45,9 +45,9 @@ the_string=$(grep "DUMBVM" "output.txt")
 echo $the_string | grep -oP '.*(?=system version)'
 var=$(echo $the_string | grep -oP '.*(?=system version)')
 
-string2="Put-your-group-name-here's"
+string2="Put-your-group-name-here"
 
-if [[ "$var" == "$string2" ]]; then
+if ["$var" == "$string2"]; then
   echo "No changes detected in group name string"
   exit 1  # Exit with a non-zero status code to indicate failure
 else
