@@ -3,19 +3,24 @@
 
 ls ~/
 cd /github/workspace
+echo "Original PATH variable in the container"
 echo $PATH
+
+echo "Updated PATH variable in the container"
 export PATH=$PATH:/root/os161/tools/bin
 echo $PATH
 
-#
-# Build OS/161 (Kernel-level)
-# cd kern/conf
-# ./config DUMBVM
-# cd ../compile/DUMBVM
-# /root/os161/tools/bin/bmake depend
-# cd /github/workspace
-# /root/os161/tools/bin/bmake
-# cd /github/workspace
+echo "Configuring OS/161"
+Build OS/161 (Kernel-level)
+cd kern/conf
+./config DUMBVM
+
+echo "Building OS/161 (Kernel-level)"
+cd ../compile/DUMBVM
+/root/os161/tools/bin/bmake depend
+cd /github/workspace
+/root/os161/tools/bin/bmake
+cd /github/workspace
 # /root/os161/tools/bin/bmake install
 
 # # Build OS/161 (Userland)
