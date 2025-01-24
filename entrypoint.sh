@@ -48,7 +48,7 @@ var=$(echo $the_string | grep -oP '.*(?=system version)')
 if [ "$var" = "Put-your-group-name-here's" ]
 then
     echo "No changes in line containing Put-your-group-name-here's"
-    exit 1
+    return 1
 fi
 
 
