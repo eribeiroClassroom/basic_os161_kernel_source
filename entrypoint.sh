@@ -19,7 +19,7 @@ cd ../compile/DUMBVM
 /root/os161/tools/bin/bmake depend
 /root/os161/tools/bin/bmake
 
-export HOME="/root/os161/root"
+export HOME="/root"
 
 /root/os161/tools/bin/bmake install
 
