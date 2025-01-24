@@ -42,14 +42,15 @@ cd /root/os161/root/
 cat output.txt
 
 the_string=$(grep "DUMBVM" "output.txt")
-echo $the_string | grep -oP '.*(?=system version)'
 string1=$(echo $the_string | grep -oP '.*(?=system version)')
+first_three=${string1:0:3}
+echo $first_three
 
 # Template string 
-string2="Put-your-group-name-here's"
+string2="Put"
 
 # Test fails if no changes are detected 
-if [ "$string1" = "$string2" ]; then
+if [ "$first_three" = "$string2" ]; then
   echo "Group-name string wasn't changed"
   exit 1
 else
