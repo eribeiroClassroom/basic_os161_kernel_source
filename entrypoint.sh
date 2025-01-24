@@ -45,10 +45,13 @@ the_string=$(grep "DUMBVM" "output.txt")
 echo $the_string | grep -oP '.*(?=system version)'
 var=$(echo $the_string | grep -oP '.*(?=system version)')
 
-if [ "$var" = "Put-your-group-name-here's" ]
-then
-    echo "No changes in line containing Put-your-group-name-here's"
-    return 1
+string2="Put-your-group-name-here's"
+
+if [[ "$var" == "$string2" ]]; then
+  echo "No changes detected in group name string"
+  exit 1  # Exit with a non-zero status code to indicate failure
+else
+  echo "Group-name string was changed"
 fi
 
 
