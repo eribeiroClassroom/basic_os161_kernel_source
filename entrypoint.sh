@@ -19,6 +19,8 @@ cd ../compile/DUMBVM
 /root/os161/tools/bin/bmake depend
 /root/os161/tools/bin/bmake
 
+# Set (or re-set) the HOME variable otherwise 
+# GitHub will set it to HOME = "/github/home/"
 export HOME="/root"
 
 /root/os161/tools/bin/bmake install
@@ -43,11 +45,11 @@ the_string=$(grep "DUMBVM" "output.txt")
 echo $the_string | grep -oP '.*(?=system version)'
 # var=$(echo $the_string | grep -oP '.*(?=system version)')
 
-# if [ "$var" != "Put-your-group-name-here's" ]
-# then
-#     echo "No changes in line containing Put-your-group-name-here's"
-#     exit 1
-# fi
+if [ "$var" != "Put-your-group-name-here's" ]
+then
+    echo "No changes in line containing Put-your-group-name-here's"
+    exit 1
+fi
 
 
 
