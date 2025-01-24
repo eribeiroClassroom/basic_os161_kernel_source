@@ -18,6 +18,9 @@ echo "Building OS/161 (Kernel-level)"
 cd ../compile/DUMBVM
 /root/os161/tools/bin/bmake depend
 /root/os161/tools/bin/bmake
+
+export HOME="/root/os161/root"
+
 /root/os161/tools/bin/bmake install
 
 echo "List of files in the directory"
