@@ -7,6 +7,7 @@ echo $PATH
 export PATH=$PATH:/root/os161/tools/bin
 echo $PATH
 
+#
 # Build OS/161 (Kernel-level)
 # cd kern/conf
 # ./config DUMBVM
